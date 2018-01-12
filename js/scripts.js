@@ -15,6 +15,12 @@ function activateItem(event) {
   }
 }
 
+function removeItem(event) {
+  if (event.target.nodeName === 'LI') {
+    event.target.remove();
+  }
+}
+
 function createNewItem(event) {
   event.preventDefault();
   let li = document.createElement('li');
@@ -24,4 +30,5 @@ function createNewItem(event) {
 }
 
 ul.addEventListener('click', activateItem);
+ul.addEventListener('dblclick', removeItem);
 form.addEventListener('submit', createNewItem);
