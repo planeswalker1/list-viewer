@@ -15,4 +15,13 @@ function activateItem(event) {
   }
 }
 
+function createNewItem(event) {
+  event.preventDefault();
+  let li = document.createElement('li');
+  li.textContent = input.value;
+  ul.append(li);
+  input.value = '';
+}
+
 ul.addEventListener('click', activateItem);
+form.addEventListener('submit', createNewItem);
